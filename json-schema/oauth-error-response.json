@@ -1,0 +1,36 @@
+{
+  "$id": "oauth-error-response.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OAuth 2.0 Error Response",
+  "description": "Schema describing the structure of an OAuth 2.0 error response as defined in RFC 6749 Section 5.2. The authorization server responds with an HTTP 400 (Bad Request) status code and includes a JSON body with error details.",
+  "type": "object",
+  "required": [
+    "error"
+  ],
+  "properties": {
+    "error": {
+      "type": "string",
+      "description": "A single ASCII error code from the defined set of error codes.",
+      "enum": [
+        "invalid_request",
+        "invalid_client",
+        "invalid_grant",
+        "unauthorized_client",
+        "unsupported_grant_type",
+        "invalid_scope",
+        "unsupported_token_type"
+      ]
+    },
+    "error_description": {
+      "type": "string",
+      "description": "A human-readable ASCII text providing additional information, used to assist the client developer in understanding the error that occurred.",
+      "pattern": "^[\\x20-\\x21\\x23-\\x5B\\x5D-\\x7E]*$"
+    },
+    "error_uri": {
+      "type": "string",
+      "format": "uri",
+      "description": "A URI identifying a human-readable web page with information about the error, used to provide the client developer with additional information about the error."
+    }
+  },
+  "additionalProperties": false
+}

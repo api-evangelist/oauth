@@ -1,0 +1,126 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "oauth": "https://www.w3.org/ns/oauth#",
+    "schema": "https://schema.org/",
+    "sec": "https://w3id.org/security#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "AuthorizationServer": {
+      "@id": "oauth:AuthorizationServer",
+      "@type": "@id"
+    },
+    "ResourceServer": {
+      "@id": "oauth:ResourceServer",
+      "@type": "@id"
+    },
+    "Client": {
+      "@id": "oauth:Client",
+      "@type": "@id"
+    },
+    "AccessToken": {
+      "@id": "oauth:AccessToken",
+      "@type": "@id"
+    },
+    "RefreshToken": {
+      "@id": "oauth:RefreshToken",
+      "@type": "@id"
+    },
+    "AuthorizationCode": {
+      "@id": "oauth:AuthorizationCode",
+      "@type": "@id"
+    },
+    "Grant": {
+      "@id": "oauth:Grant",
+      "@type": "@id"
+    },
+    "Scope": {
+      "@id": "oauth:Scope",
+      "@type": "@id"
+    },
+    "accessToken": {
+      "@id": "oauth:accessToken",
+      "@type": "xsd:string"
+    },
+    "refreshToken": {
+      "@id": "oauth:refreshToken",
+      "@type": "xsd:string"
+    },
+    "tokenType": {
+      "@id": "oauth:tokenType",
+      "@type": "xsd:string"
+    },
+    "expiresIn": {
+      "@id": "oauth:expiresIn",
+      "@type": "xsd:integer"
+    },
+    "scope": {
+      "@id": "oauth:scope",
+      "@type": "xsd:string"
+    },
+    "grantType": {
+      "@id": "oauth:grantType",
+      "@type": "xsd:string"
+    },
+    "clientId": {
+      "@id": "oauth:clientId",
+      "@type": "xsd:string"
+    },
+    "clientSecret": {
+      "@id": "sec:clientSecret",
+      "@type": "xsd:string"
+    },
+    "redirectUri": {
+      "@id": "oauth:redirectUri",
+      "@type": "@id"
+    },
+    "authorizationEndpoint": {
+      "@id": "oauth:authorizationEndpoint",
+      "@type": "@id"
+    },
+    "tokenEndpoint": {
+      "@id": "oauth:tokenEndpoint",
+      "@type": "@id"
+    },
+    "revocationEndpoint": {
+      "@id": "oauth:revocationEndpoint",
+      "@type": "@id"
+    },
+    "responseType": {
+      "@id": "oauth:responseType",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "oauth:state",
+      "@type": "xsd:string"
+    },
+    "codeChallenge": {
+      "@id": "oauth:codeChallenge",
+      "@type": "xsd:string"
+    },
+    "codeChallengeMethod": {
+      "@id": "oauth:codeChallengeMethod",
+      "@type": "xsd:string"
+    },
+    "error": {
+      "@id": "oauth:error",
+      "@type": "xsd:string"
+    },
+    "errorDescription": {
+      "@id": "oauth:errorDescription",
+      "@type": "xsd:string"
+    },
+    "errorUri": {
+      "@id": "oauth:errorUri",
+      "@type": "@id"
+    },
+    "name": "schema:name",
+    "description": "schema:description",
+    "url": "schema:url",
+    "identifier": "dcterms:identifier",
+    "issued": {
+      "@id": "dcterms:issued",
+      "@type": "xsd:date"
+    }
+  }
+}

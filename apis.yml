@@ -3,10 +3,34 @@ description: OAuth is an open authorization framework that enables third-party a
   to access user resources without exposing credentials. It provides a secure, token-based
   delegation mechanism widely used across the web for granting limited access to APIs
   and services on behalf of users.
-url: null
+url: https://oauth.net/2/
 tags:
 - OAuth
+- Authorization
+- Security
+- Access Control
+- Tokens
 created: '2025'
 modified: '2025'
-apis: []
-common: []
+apis:
+- name: OAuth 2.0 Authorization Server API
+  description: >-
+    API specification for an OAuth 2.0 authorization server implementing the
+    authorization endpoint, token endpoint, and token revocation endpoint as
+    defined in RFC 6749, RFC 6750, and RFC 7009.
+  properties:
+  - type: x-openapi
+    url: openapi/oauth-token-endpoint.yml
+common:
+- type: x-json-schema
+  url: json-schema/oauth-token-response.json
+  title: OAuth 2.0 Token Response
+- type: x-json-schema
+  url: json-schema/oauth-error-response.json
+  title: OAuth 2.0 Error Response
+- type: x-json-schema
+  url: json-schema/oauth-authorization-request.json
+  title: OAuth 2.0 Authorization Request
+- type: x-json-ld-context
+  url: json-ld/oauth-context.jsonld
+  title: OAuth 2.0 JSON-LD Context
