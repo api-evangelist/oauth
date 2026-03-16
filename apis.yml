@@ -1,36 +1,43 @@
+aid: oauth
 name: OAuth
-description: OAuth is an open authorization framework that enables third-party applications
-  to access user resources without exposing credentials. It provides a secure, token-based
-  delegation mechanism widely used across the web for granting limited access to APIs
-  and services on behalf of users.
-url: https://oauth.net/2/
+description: >-
+  OAuth is an open authorization framework that enables third-party applications
+  to access user resources without exposing credentials. It provides a secure,
+  token-based delegation mechanism widely used across the web for granting
+  limited access to APIs and services on behalf of users.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-- OAuth
-- Authorization
-- Security
-- Access Control
-- Tokens
-created: '2025'
-modified: '2025'
+  - OAuth
+  - Authorization
+  - Security
+  - Access Control
+  - Tokens
+url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/apis.yml
+created: '2025-01-01'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 apis:
-- name: OAuth 2.0 Authorization Server API
-  description: >-
-    API specification for an OAuth 2.0 authorization server implementing the
-    authorization endpoint, token endpoint, and token revocation endpoint as
-    defined in RFC 6749, RFC 6750, and RFC 7009.
-  properties:
-  - type: x-openapi
-    url: openapi/oauth-token-endpoint.yml
+  - aid: oauth:oauth-2-authorization-server
+    name: OAuth 2.0 Authorization Server API
+    description: >-
+      API specification for an OAuth 2.0 authorization server implementing the
+      authorization endpoint, token endpoint, and token revocation endpoint as
+      defined in RFC 6749, RFC 6750, and RFC 7009.
+    humanURL: https://oauth.net/2/
+    tags:
+      - OAuth 2.0
+      - Authorization
+    properties:
+      - type: Documentation
+        url: https://oauth.net/2/
 common:
-- type: x-json-schema
-  url: json-schema/oauth-token-response.json
-  title: OAuth 2.0 Token Response
-- type: x-json-schema
-  url: json-schema/oauth-error-response.json
-  title: OAuth 2.0 Error Response
-- type: x-json-schema
-  url: json-schema/oauth-authorization-request.json
-  title: OAuth 2.0 Authorization Request
-- type: x-json-ld-context
-  url: json-ld/oauth-context.jsonld
-  title: OAuth 2.0 JSON-LD Context
+  - type: Website
+    url: https://oauth.net/
+  - type: Documentation
+    url: https://oauth.net/2/
+  - type: Reference
+    url: https://datatracker.ietf.org/doc/html/rfc6749
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
