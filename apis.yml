@@ -8,10 +8,10 @@ description: >-
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
-  - OAuth
-  - Authorization
-  - Security
   - Access Control
+  - Authorization
+  - OAuth
+  - Security
   - Tokens
 url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/apis.yml
 created: '2025-01-01'
@@ -26,8 +26,8 @@ apis:
       defined in RFC 6749, RFC 6750, and RFC 7009.
     humanURL: https://oauth.net/2/
     tags:
-      - OAuth 2.0
       - Authorization
+      - OAuth 2.0
     properties:
       - type: Documentation
         url: https://oauth.net/2/
