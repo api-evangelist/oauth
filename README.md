@@ -16,7 +16,7 @@ OAuth is an open authorization framework that enables third-party applications t
 ## Timestamps
 
 - **Created:** 2025-01-01 
-- **Modified:** 2026-03-16 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
@@ -33,6 +33,11 @@ API specification for an OAuth 2.0 authorization server implementing the authori
 #### Properties
 
 - [Documentation](https://oauth.net/2/)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/openapi/oauth-token-endpoint.yml)
+- [JSON Schema - Authorization Request](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json)
+- [JSON Schema - Token Response](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json)
+- [JSON Schema - Error Response](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json)
+- [JSON-LD Context](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld)
 
 ## Common Properties
 

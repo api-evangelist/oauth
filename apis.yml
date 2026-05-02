@@ -15,7 +15,7 @@ tags:
   - Tokens
 url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/apis.yml
 created: '2025-01-01'
-modified: '2026-03-16'
+modified: '2026-04-28'
 specificationVersion: '0.19'
 apis:
   - aid: oauth:oauth-2-authorization-server
@@ -31,6 +31,16 @@ apis:
     properties:
       - type: Documentation
         url: https://oauth.net/2/
+      - type: OpenAPI
+        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/openapi/oauth-token-endpoint.yml
+      - type: JSON Schema
+        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json
+      - type: JSON Schema
+        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json
+      - type: JSON Schema
+        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json
+      - type: JSON-LD Context
+        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
 common:
   - type: Website
     url: https://oauth.net/
