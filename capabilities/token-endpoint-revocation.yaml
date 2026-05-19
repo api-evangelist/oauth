@@ -1,0 +1,81 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: OAuth 2.0 Authorization Server — Revocation
+  description: 'OAuth 2.0 Authorization Server — Revocation. 1 operations. Lead operation: Token Revocation Endpoint. Self-contained
+    Naftiko capability covering one Oauth business surface.'
+  tags:
+  - Oauth
+  - Revocation
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    OAUTH_API_KEY: OAUTH_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: token-endpoint-revocation
+    baseUri: https://authorization-server.example.com
+    description: OAuth 2.0 Authorization Server — Revocation business capability. Self-contained, no shared references.
+    resources:
+    - name: revoke
+      path: /revoke
+      operations:
+      - name: revoketoken
+        method: POST
+        description: Token Revocation Endpoint
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: basic
+      username: '{{env.OAUTH_USER}}'
+      password: '{{env.OAUTH_PASS}}'
+  exposes:
+  - type: rest
+    namespace: token-endpoint-revocation-rest
+    port: 8080
+    description: REST adapter for OAuth 2.0 Authorization Server — Revocation. One Spectral-compliant resource per consumed
+      operation, prefixed with /v1.
+    resources:
+    - path: /v1/revoke
+      name: revoke
+      description: REST surface for revoke.
+      operations:
+      - method: POST
+        name: revoketoken
+        description: Token Revocation Endpoint
+        call: token-endpoint-revocation.revoketoken
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: token-endpoint-revocation-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for OAuth 2.0 Authorization Server — Revocation. One tool per consumed operation, routed inline
+      through this capability's consumes block.
+    tools:
+    - name: token-revocation-endpoint
+      description: Token Revocation Endpoint
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: token-endpoint-revocation.revoketoken
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
