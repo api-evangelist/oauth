@@ -31,14 +31,14 @@ apis:
         url: https://oauth.net/2/
       - type: OpenAPI
         url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/openapi/oauth-token-endpoint.yml
-      - type: JSON Schema
+      - type: JSONSchema
         url: >-
           https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json
-      - type: JSON Schema
+      - type: JSONSchema
         url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json
-      - type: JSON Schema
+      - type: JSONSchema
         url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json
-      - type: JSON-LD Context
+      - type: JSONLDContext
         url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
 common:
   - type: Website
