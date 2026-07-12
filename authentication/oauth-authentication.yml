@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/oauth-token-endpoint.yml
+summary:
+  types:
+  - http
+schemes:
+- name: ClientBasicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic authentication using the client_id as username and client_secret as
+    password, as defined in RFC 6749 Section 2.3.1.
+  sources:
+  - openapi/oauth-token-endpoint.yml
