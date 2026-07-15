@@ -41,6 +41,8 @@ apis:
       - type: JSONLDContext
         url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
 common:
+  - type: AgenticAccess
+    url: agentic-access/oauth-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/oauth-vulnerability-disclosure.yml
   - type: DomainSecurity
