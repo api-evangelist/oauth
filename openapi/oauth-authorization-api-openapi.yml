@@ -1,0 +1,111 @@
+openapi: 3.0.3
+info:
+  title: OAuth 2.0 Server Authorization API
+  description: OpenAPI specification for OAuth 2.0 authorization server endpoints as defined in RFC 6749 (The OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage). Covers the token endpoint, authorization endpoint, and token revocation endpoint (RFC 7009).
+  version: 1.0.0
+  contact:
+    name: Kin Lane
+    email: info@apievangelist.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://authorization-server.example.com
+  description: OAuth 2.0 Authorization Server
+tags:
+- name: Authorization
+  description: OAuth 2.0 authorization endpoint operations.
+paths:
+  /authorize:
+    get:
+      operationId: authorize
+      summary: Authorization Endpoint
+      description: The authorization endpoint is used to interact with the resource owner and obtain an authorization grant. The authorization server MUST first verify the identity of the resource owner.
+      tags:
+      - Authorization
+      parameters:
+      - name: response_type
+        in: query
+        required: true
+        description: The value MUST be "code" for requesting an authorization code or "token" for requesting an access token (implicit grant).
+        schema:
+          type: string
+          enum:
+          - code
+          - token
+      - name: client_id
+        in: query
+        required: true
+        description: The client identifier issued to the client during registration.
+        schema:
+          type: string
+      - name: redirect_uri
+        in: query
+        required: false
+        description: The URI to which the authorization server will redirect the user-agent after authorization is granted or denied.
+        schema:
+          type: string
+          format: uri
+      - name: scope
+        in: query
+        required: false
+        description: The scope of the access request as a space-delimited list of values.
+        schema:
+          type: string
+      - name: state
+        in: query
+        required: false
+        description: An opaque value used by the client to maintain state between the request and callback. Used to prevent cross-site request forgery.
+        schema:
+          type: string
+      responses:
+        '302':
+          description: Redirect to the client redirect_uri with authorization code or access token appended as query or fragment parameters.
+          headers:
+            Location:
+              description: Redirect URI with authorization response parameters.
+              schema:
+                type: string
+                format: uri
+        '400':
+          description: Invalid request parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Client authentication failed.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      required:
+      - error
+      properties:
+        error:
+          type: string
+          description: A single ASCII error code from the defined set.
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          - unsupported_token_type
+        error_description:
+          type: string
+          description: A human-readable description providing additional information about the error.
+        error_uri:
+          type: string
+          format: uri
+          description: A URI identifying a human-readable web page with information about the error.
+  securitySchemes:
+    ClientBasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using the client_id as username and client_secret as password, as defined in RFC 6749 Section 2.3.1.

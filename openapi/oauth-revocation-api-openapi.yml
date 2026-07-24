@@ -1,0 +1,86 @@
+openapi: 3.0.3
+info:
+  title: OAuth 2.0 Server Authorization Revocation API
+  description: OpenAPI specification for OAuth 2.0 authorization server endpoints as defined in RFC 6749 (The OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage). Covers the token endpoint, authorization endpoint, and token revocation endpoint (RFC 7009).
+  version: 1.0.0
+  contact:
+    name: Kin Lane
+    email: info@apievangelist.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+servers:
+- url: https://authorization-server.example.com
+  description: OAuth 2.0 Authorization Server
+tags:
+- name: Revocation
+  description: OAuth 2.0 token revocation operations (RFC 7009).
+paths:
+  /revoke:
+    post:
+      operationId: revokeToken
+      summary: Token Revocation Endpoint
+      description: The token revocation endpoint allows clients to notify the authorization server that a previously obtained token is no longer needed, as defined in RFC 7009.
+      tags:
+      - Revocation
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - token
+              properties:
+                token:
+                  type: string
+                  description: The token that the client wants to have revoked.
+                token_type_hint:
+                  type: string
+                  description: A hint about the type of the token being revoked.
+                  enum:
+                  - access_token
+                  - refresh_token
+      responses:
+        '200':
+          description: The authorization server responds with HTTP status code 200 for both successful and unsuccessful revocation requests.
+        '400':
+          description: Invalid request.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '401':
+          description: Client authentication failed.
+      security:
+      - ClientBasicAuth: []
+components:
+  schemas:
+    ErrorResponse:
+      type: object
+      required:
+      - error
+      properties:
+        error:
+          type: string
+          description: A single ASCII error code from the defined set.
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          - unsupported_token_type
+        error_description:
+          type: string
+          description: A human-readable description providing additional information about the error.
+        error_uri:
+          type: string
+          format: uri
+          description: A URI identifying a human-readable web page with information about the error.
+  securitySchemes:
+    ClientBasicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic authentication using the client_id as username and client_secret as password, as defined in RFC 6749 Section 2.3.1.
