@@ -6,7 +6,20 @@ description: >-
   exposing credentials. It provides a secure, token-based delegation mechanism widely used across the web for granting
   limited access to APIs and services on behalf of users.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oauth.png
 tags:
   - Access Control
   - Authorization
@@ -18,29 +31,75 @@ created: '2025-01-01'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 apis:
-  - aid: oauth:oauth-2-authorization-server
-    name: OAuth 2.0 Authorization Server API
-    description: >-
-      API specification for an OAuth 2.0 authorization server implementing the authorization endpoint, token endpoint,
-      and token revocation endpoint as defined in RFC 6749, RFC 6750, and RFC 7009.
-    humanURL: https://oauth.net/2/
-    tags:
-      - Authorization
-      - OAuth 2.0
-    properties:
-      - type: Documentation
-        url: https://oauth.net/2/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/openapi/oauth-token-endpoint.yml
-      - type: JSONSchema
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json
-      - type: JSONSchema
-        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json
-      - type: JSONSchema
-        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json
-      - type: JSONLDContext
-        url: https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
+- aid: oauth:oauth-authorization-api
+  name: OAuth Authorization API
+  description: OAuth 2.0 authorization endpoint operations.
+  humanURL: https://oauth.net/2/
+  tags:
+  - Authorization
+  properties:
+  - type: OpenAPI
+    url: openapi/oauth-authorization-api-openapi.yml
+  - type: Documentation
+    url: https://oauth.net/2/
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
+- aid: oauth:oauth-revocation-api
+  name: OAuth Revocation API
+  description: OAuth 2.0 token revocation operations (RFC 7009).
+  humanURL: https://oauth.net/2/
+  tags:
+  - Revocation
+  properties:
+  - type: OpenAPI
+    url: openapi/oauth-revocation-api-openapi.yml
+  - type: Documentation
+    url: https://oauth.net/2/
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
+- aid: oauth:oauth-token-api
+  name: OAuth Token API
+  description: OAuth 2.0 token endpoint operations.
+  humanURL: https://oauth.net/2/
+  tags:
+  - Token
+  properties:
+  - type: OpenAPI
+    url: openapi/oauth-token-api-openapi.yml
+  - type: Documentation
+    url: https://oauth.net/2/
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json
+  - type: JSONSchema
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json
+  - type: JSONLDContext
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
 common:
   - type: AgenticAccess
     url: agentic-access/oauth-agentic-access.yml
