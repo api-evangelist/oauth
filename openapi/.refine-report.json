@@ -1,0 +1,18 @@
+{
+  "provider": "oauth",
+  "sources": [
+    "oauth-authorization-api-openapi.yml",
+    "oauth-revocation-api-openapi.yml",
+    "oauth-token-api-openapi.yml"
+  ],
+  "outputs": [
+    "oauth-authorization-api-openapi.yml",
+    "oauth-revocation-api-openapi.yml",
+    "oauth-token-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
