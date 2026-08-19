@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "OAuth 2.0 Server Authorization Revocation API",
+    "version": "1.0.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Revocation",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Token Revocation Endpoint",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://authorization-server.example.com/revoke",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "token",
+                  "value": ""
+                },
+                {
+                  "name": "token_type_hint",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "The token revocation endpoint allows clients to notify the authorization server that a previously obtained token is no longer needed, as defined in RFC 7009."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

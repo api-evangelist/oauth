@@ -1,0 +1,403 @@
+{
+  "item": [
+    {
+      "id": "2e3bdc54-4225-42b2-b06c-05c60933e06d",
+      "name": "Token",
+      "description": {
+        "content": "OAuth 2.0 token endpoint operations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ec4981c2-cf80-4c03-bc7a-65c9194e12ef",
+          "name": "Token Endpoint",
+          "request": {
+            "name": "Token Endpoint",
+            "description": {
+              "content": "The token endpoint is used by the client to obtain an access token by presenting its authorization grant or refresh token. Supports authorization code, client credentials, resource owner password credentials, and refresh token grant types.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "token"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "{{basicAuthUsername}}"
+                },
+                {
+                  "key": "password",
+                  "value": "{{basicAuthPassword}}"
+                }
+              ]
+            },
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "disabled": false,
+                  "key": "grant_type",
+                  "value": "<string>",
+                  "description": "(Required) The type of grant being presented."
+                },
+                {
+                  "disabled": false,
+                  "key": "code",
+                  "value": "<string>",
+                  "description": "The authorization code received from the authorization server. Required for authorization_code grant type."
+                },
+                {
+                  "disabled": false,
+                  "key": "redirect_uri",
+                  "value": "<uri>",
+                  "description": "The redirect URI used in the authorization request. Required if included in the original authorization request."
+                },
+                {
+                  "disabled": false,
+                  "key": "client_id",
+                  "value": "<string>",
+                  "description": "The client identifier. Required for public clients not authenticating via other means."
+                },
+                {
+                  "disabled": false,
+                  "key": "client_secret",
+                  "value": "<string>",
+                  "description": "The client secret. Used for confidential clients authenticating via POST body."
+                },
+                {
+                  "disabled": false,
+                  "key": "scope",
+                  "value": "<string>",
+                  "description": "The scope of the access request as a space-delimited list."
+                },
+                {
+                  "disabled": false,
+                  "key": "username",
+                  "value": "<string>",
+                  "description": "The resource owner username. Required for password grant type."
+                },
+                {
+                  "disabled": false,
+                  "key": "password",
+                  "value": "<string>",
+                  "description": "The resource owner password. Required for password grant type."
+                },
+                {
+                  "disabled": false,
+                  "key": "refresh_token",
+                  "value": "<string>",
+                  "description": "The refresh token. Required for refresh_token grant type."
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "b0a13964-f127-4e1e-b701-7ae36f52cd46",
+              "name": "Successful token response.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The type of grant being presented.",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The authorization code received from the authorization server. Required for authorization_code grant type.",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "SplxlOBeZQQYbYS6WxSbIA"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The redirect URI used in the authorization request. Required if included in the original authorization request.",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "https://client.example.org/callback"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The client identifier. Required for public clients not authenticating via other means.",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "s6BhdRkqt3"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "MUST be set to no-store.",
+                  "key": "Cache-Control",
+                  "value": "no-store"
+                },
+                {
+                  "disabled": false,
+                  "description": "MUST be set to no-cache.",
+                  "key": "Pragma",
+                  "value": "no-cache"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"access_token\": \"2YotnFZFEjr1zCsicMWpAA\",\n  \"token_type\": \"Bearer\",\n  \"expires_in\": 3600,\n  \"refresh_token\": \"tGzv3JOkF0XG5Qx2TlKWIA\",\n  \"scope\": \"read write\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b783af8d-7f1d-4d05-868c-41d36d4222cb",
+              "name": "Error response for invalid token requests.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The type of grant being presented.",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The authorization code received from the authorization server. Required for authorization_code grant type.",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "SplxlOBeZQQYbYS6WxSbIA"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The redirect URI used in the authorization request. Required if included in the original authorization request.",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "https://client.example.org/callback"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The client identifier. Required for public clients not authenticating via other means.",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "s6BhdRkqt3"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"invalid_grant\",\n  \"error_description\": \"The authorization code has expired.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "030e7b77-b58e-4849-b6c7-65b0620d3acf",
+              "name": "Client authentication failed.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "token"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "(Required) The type of grant being presented.",
+                        "type": "text/plain"
+                      },
+                      "key": "grant_type",
+                      "value": "authorization_code"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The authorization code received from the authorization server. Required for authorization_code grant type.",
+                        "type": "text/plain"
+                      },
+                      "key": "code",
+                      "value": "SplxlOBeZQQYbYS6WxSbIA"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The redirect URI used in the authorization request. Required if included in the original authorization request.",
+                        "type": "text/plain"
+                      },
+                      "key": "redirect_uri",
+                      "value": "https://client.example.org/callback"
+                    },
+                    {
+                      "disabled": false,
+                      "description": {
+                        "content": "The client identifier. Required for public clients not authenticating via other means.",
+                        "type": "text/plain"
+                      },
+                      "key": "client_id",
+                      "value": "s6BhdRkqt3"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"error\": \"unauthorized_client\",\n  \"error_description\": \"string\",\n  \"error_uri\": \"http://vt.uofbJeWeEU8HkMFZ.92s9k2q40o78lQF3oAwTRgjWX,ZzN\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://authorization-server.example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "44d3b690-03f6-45bf-8348-0e1827cde1d3",
+    "name": "OAuth 2.0 Server Authorization Token API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "OpenAPI specification for OAuth 2.0 authorization server endpoints as defined in RFC 6749 (The OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage). Covers the token endpoint, authorization endpoint, and token revocation endpoint (RFC 7009).\n\nContact Support:\n Name: Kin Lane\n Email: info@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}
