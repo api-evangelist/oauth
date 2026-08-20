@@ -23,6 +23,12 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/oauth.png
 tags:
   - Access Control
   - Authorization
+  - Authentication
+  - Security
+  - Tokens
+tags_raw:
+  - Access Control
+  - Authorization
   - OAuth
   - Security
   - Tokens
