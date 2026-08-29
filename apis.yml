@@ -6,6 +6,17 @@ description: >-
   exposing credentials. It provides a secure, token-based delegation mechanism widely used across the web for granting
   limited access to APIs and services on behalf of users.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-serve
