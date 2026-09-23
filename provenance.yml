@@ -48,15 +48,18 @@ artifacts:
   json-schema/oauth-token-response.json:
     method: unknown
     evidence: no authorship recorded
+  openapi/_original/oauth-token-endpoint.yml:
+    method: harvested
+    evidence: fetched from the provider as-is; byte-identical to the source
   openapi/oauth-authorization-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/oauth-revocation-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   openapi/oauth-token-api-openapi.yml:
-    method: unknown
-    evidence: no authorship recorded
+    method: derived
+    evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
   plans/oauth-plans-pricing.yml:
     method: generated
     evidence: declared in the artifact

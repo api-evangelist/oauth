@@ -1,4 +1,4 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
   title: OAuth 2.0 Server Authorization API
   description: OpenAPI specification for OAuth 2.0 authorization server endpoints as defined in RFC 6749 (The OAuth 2.0 Authorization Framework) and RFC 6750 (Bearer Token Usage). Covers the token endpoint, authorization endpoint, and token revocation endpoint (RFC 7009).
