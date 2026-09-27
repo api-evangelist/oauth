@@ -121,6 +121,29 @@ components:
           type: string
           format: uri
           description: A URI identifying a human-readable web page with information about the error.
+    TokenResponse:
+      type: object
+      required:
+      - access_token
+      - token_type
+      properties:
+        access_token:
+          type: string
+          description: The access token issued by the authorization server.
+        token_type:
+          type: string
+          description: The type of the token issued (e.g., Bearer).
+          example: Bearer
+        expires_in:
+          type: integer
+          description: The lifetime in seconds of the access token.
+          example: 3600
+        refresh_token:
+          type: string
+          description: A refresh token that can be used to obtain new access tokens.
+        scope:
+          type: string
+          description: The scope of the access token as a space-delimited list.
     TokenRequest:
       type: object
       required:
@@ -159,29 +182,6 @@ components:
         refresh_token:
           type: string
           description: The refresh token. Required for refresh_token grant type.
-    TokenResponse:
-      type: object
-      required:
-      - access_token
-      - token_type
-      properties:
-        access_token:
-          type: string
-          description: The access token issued by the authorization server.
-        token_type:
-          type: string
-          description: The type of the token issued (e.g., Bearer).
-          example: Bearer
-        expires_in:
-          type: integer
-          description: The lifetime in seconds of the access token.
-          example: 3600
-        refresh_token:
-          type: string
-          description: A refresh token that can be used to obtain new access tokens.
-        scope:
-          type: string
-          description: The scope of the access token as a space-delimited list.
   securitySchemes:
     ClientBasicAuth:
       type: http
