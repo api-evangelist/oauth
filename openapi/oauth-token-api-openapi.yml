@@ -98,29 +98,6 @@ paths:
       - {}
 components:
   schemas:
-    ErrorResponse:
-      type: object
-      required:
-      - error
-      properties:
-        error:
-          type: string
-          description: A single ASCII error code from the defined set.
-          enum:
-          - invalid_request
-          - invalid_client
-          - invalid_grant
-          - unauthorized_client
-          - unsupported_grant_type
-          - invalid_scope
-          - unsupported_token_type
-        error_description:
-          type: string
-          description: A human-readable description providing additional information about the error.
-        error_uri:
-          type: string
-          format: uri
-          description: A URI identifying a human-readable web page with information about the error.
     TokenResponse:
       type: object
       required:
@@ -144,6 +121,29 @@ components:
         scope:
           type: string
           description: The scope of the access token as a space-delimited list.
+    ErrorResponse:
+      type: object
+      required:
+      - error
+      properties:
+        error:
+          type: string
+          description: A single ASCII error code from the defined set.
+          enum:
+          - invalid_request
+          - invalid_client
+          - invalid_grant
+          - unauthorized_client
+          - unsupported_grant_type
+          - invalid_scope
+          - unsupported_token_type
+        error_description:
+          type: string
+          description: A human-readable description providing additional information about the error.
+        error_uri:
+          type: string
+          format: uri
+          description: A URI identifying a human-readable web page with information about the error.
     TokenRequest:
       type: object
       required:
