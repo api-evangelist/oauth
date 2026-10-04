@@ -1,0 +1,44 @@
+slug: oauth
+provider: OAuth
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 3
+edges:
+- tag: Authorization
+  spec_file: oauth-authorization-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: GET /authorize authorize Authorization Endpoint — 'OAuth 2.0 authorization server endpoints
+    as defined in RFC 6749'
+  reason: The OAuth 2.0 authorization endpoint delegates user-consented access to resources — identity
+    and access management. Could arguably be developer credential management, but the surface is a generic
+    authorization server.
+- tag: Token
+  spec_file: oauth-token-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.8
+  evidence: POST /token requestToken Token Endpoint; schemas TokenResponse, TokenRequest
+  reason: Issues access tokens for delegated authorization — core identity and access management, not
+    a domain business function.
+- tag: Revocation
+  spec_file: oauth-revocation-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.75
+  evidence: POST /revoke revokeToken Token Revocation Endpoint (RFC 7009)
+  reason: Token revocation withdraws delegated access credentials — an access management operation of
+    the authorization server.

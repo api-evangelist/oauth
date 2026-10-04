@@ -121,6 +121,9 @@ apis:
     url: >-
       https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld
 common:
+  - type: CapabilityMap
+    url: capabilities/oauth-capability-edges.yml
+    name: OAuth Business Capability Map
   - type: AgenticAccess
     url: agentic-access/oauth-agentic-access.yml
   - type: VulnerabilityDisclosure
