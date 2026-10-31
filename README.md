@@ -1,4 +1,4 @@
-# OAuth (oauth)
+# oauth
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,58 +64,22 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-OAuth is an open authorization framework that enables third-party applications to access user resources without exposing credentials. It provides a secure, token-based delegation mechanism widely used across the web for granting limited access to APIs and services on behalf of users.
+## oauth on APIs.io
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/apis.yml)
+Everything profiled for oauth is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/oauth/](https://apis.io/providers/oauth/)** — or go straight to one of the APIs or properties below.
 
-## Scope
+## API Evangelist rating
 
-- **Type:** Index
+Not yet rated. See [apis.io/providers/oauth/](https://apis.io/providers/oauth/).
 
-## Tags
+## How this profile is made
 
-- Access Control
-- Authorization
-- OAuth
-- Security
-- Tokens
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
 
-## Timestamps
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for oauth: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
 
-- **Created:** 2025-01-01
-- **Modified:** 2026-05-19
+## Open an issue
 
-## APIs
-
-### OAuth 2.0 Authorization Server API
-
-API specification for an OAuth 2.0 authorization server implementing the authorization endpoint, token endpoint, and token revocation endpoint as defined in RFC 6749, RFC 6750, and RFC 7009.
-
-- **Human URL:** [https://oauth.net/2/](https://oauth.net/2/)
-
-#### Tags
-
-- Authorization
-- OAuth 2.0
-
-#### Properties
-
-- [Documentation](https://oauth.net/2/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/openapi/oauth-token-endpoint.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [J S O N  Schema](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-authorization-request.json)
-- [J S O N  Schema](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-token-response.json)
-- [J S O N  Schema](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-schema/oauth-error-response.json)
-- [J S O N- L D  Context](https://raw.githubusercontent.com/api-evangelist/oauth/refs/heads/main/json-ld/oauth-context.jsonld)
-- [Postman Collection](collections/oauth-token-endpoint.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/oauth-token-endpoint.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Website](https://oauth.net/)
-- [Documentation](https://oauth.net/2/)
-- [Reference](https://datatracker.ietf.org/doc/html/rfc6749)
-
-## Maintainers
-
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/oauth/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
